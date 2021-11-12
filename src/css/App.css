@@ -1,0 +1,113 @@
+/*--------------------
+Color Mode
+--------------------*/
+:root {
+	--color-main: #009900;
+	--color-text: #383a3f;
+	--color-dark: #1f2124;
+	--color-gray: #677;
+	--color-bg: #f3f6f9;
+	--color-light: #acb4bd;
+	--color-lighter: #f9f9f9;
+	--color-white: #fff;
+	--color-border:#e0e3e6;
+}
+.dark {
+	--color-main: #00bb00;
+	--color-text: #d6d1d1;
+	--color-dark: #f5f6f7;
+	--color-gray: #999;
+	--color-bg: #1f2124;
+	--color-lighter: #292a2c;
+	--color-white: #2e3235;
+	--color-border:#252629;
+}
+/*--------------------
+Universal Styles
+--------------------*/
+.App {
+	background-color: var(--color-white);
+	height: 100vh;
+	transition: all .1s ease-in-out;
+}
+/*--------------------
+Header Styles
+--------------------*/
+.App-header {
+	padding: 1.5rem;
+	background-color: var(--color-lighter);
+	border-bottom: 2px solid var(--color-border);
+	display: flex;
+	justify-content: space-between;
+}
+.App-logo {
+	width: 10rem;
+}
+/*--------------------
+Toggle Switch Styles
+--------------------*/
+.App-header button {
+	background-color: unset;
+	border: unset;
+}
+ .switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 34px;
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	border-radius: 50%;
+	z-index: 1;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+input:checked + .slider {
+	background-color:  #1c1c1c;
+}
+input:focus + .slider {
+	box-shadow: 0 0 1px  #1c1c1c;
+}
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+i.sun, i.moon {
+	position: relative;
+	top: 7px;
+	/* color: white; */
+	font-size: 18px;
+}
+i.sun {
+	left: -4px;
+	color: #b9a87e;
+}
+i.moon{
+	right: -4px;
+	color: #782889;
+}
