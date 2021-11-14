@@ -1,4 +1,3 @@
-import React from 'react'
 import targets from '../data'
 import { highOrLow, setStatus } from '../Helpers/Helper' 
 
@@ -31,7 +30,7 @@ const TargetTable = () => {
 							})}
 							</ul>
 						</td>
-						<td className="performance">{ highOrLow(target.performance)} {target.performance}</td>
+						<td className="performance">{ highOrLow(target.performance)} {target.performance}%</td>
 						<td className="status">{ setStatus(target.status) }</td>
 					</tr>		
 				} ) }

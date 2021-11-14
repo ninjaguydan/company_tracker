@@ -34,11 +34,11 @@
 .App {
 	background-color: var(--color-white);
 	color: var(--color-text);
-	height: 100vh;
+	/* height: 100vh; */
 	transition: all .1s ease-in-out;
 }
 .declined {
-	color: red;
+	color: #c34d4d;
 }
 .approved {
 	color:var(--color-main) ;
@@ -74,16 +74,28 @@
 		margin: 0;
 	}
 	.table-header .btn-main {
-		background-color: var(--color-main);
 		display: flex;
 		align-items: center;
 		height: 50%;
 		color: white;
 	}
-	.table-header .btn-main:hover {
+	.table-header .btn-main.open {
+		background-color: var(--color-main);
+	}
+	.table-header .btn-main.close {
+		background-color: #c34d4d;
+	}
+	.table-header .btn-main.open:hover {
 		background-color: #027702;
 	}
+	.table-header .btn-main.close:hover {
+		background-color: #e75b5b;
+	}
+	.table-header .btn-main:focus, .form-control:focus, .form-select:focus {
+		box-shadow: 0 0 0 0.25rem rgb(41 255 19 / 25%);
+	}
 	.btn-main i {
+		font-size: 1.25rem;
 		position: relative;
 		left: -5px;
 	}
@@ -226,3 +238,69 @@ ul.key {
 		margin-right: .25rem;
 		font-size: 1rem;
 	}
+/*--------------------
+6 - Form Styles
+--------------------*/
+form.add-target {
+	width: 90%;
+	max-width: 550px;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+.add-target .form-group {
+	margin-bottom: 0.75rem;
+}
+.add-target .form-group label {
+	font-weight: 600;
+}
+.add-target button {
+	background-color: var(--color-dark);
+	color: var(--color-white);
+	border: none;
+	padding: 0.5rem 1rem;
+}
+.add-target button:hover {
+	color: var(--color-white);
+	background-color: var(--color-text);
+}
+.contact-group {
+	display: flex;
+	flex-wrap: wrap;
+}
+.contact-group .form-group {
+	width: 100%;
+}
+button.new-contact {
+	padding: 0;
+	background-color: unset;
+	color: var(--color-text);
+	margin-bottom: .75rem;
+
+}
+button.new-contact:hover {
+	background-color: unset;
+	color: var(--color-text);
+	text-decoration: underline;
+}
+/*===============================================
+Media Breakpoint: 600px
+===============================================*/
+@media only screen and (min-width:600px){
+	form.add-target {
+		margin-left: 5%;
+		
+	}
+	ul.key {
+		max-width: unset;
+		justify-content: flex-end;
+	}
+	ul.key li:not(:last-child) {
+		margin-right: 2rem;
+	}
+	.contact-group {
+		justify-content: space-between;
+	}
+	.contact-group .form-group {
+		width: 49%;
+	}
+}

@@ -7,11 +7,11 @@ export function highOrLow(num){
 	}
 }
 export function setStatus(str){
-	if (str == "approved") {
+	if (str === "approved") {
 		return <i className="material-icons approved">check_circle</i>
-	} else if (str == "pending") {
+	} else if (str === "pending") {
 		return <i className="material-icons pending">watch_later</i>
-	} else if (str == "researching") {
+	} else if (str === "researching") {
 		return <i className="material-icons">info</i>
 	} else {
 		return <i className="material-icons declined">cancel</i>
