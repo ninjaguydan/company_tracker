@@ -1,5 +1,5 @@
 /*--------------------
-Color Mode
+1 - Color Mode
 --------------------*/
 :root {
 	--color-main: #009900;
@@ -7,10 +7,12 @@ Color Mode
 	--color-dark: #1f2124;
 	--color-gray: #677;
 	--color-bg: #f3f6f9;
-	--color-light: #acb4bd;
+	--color-light: #eeffee;
 	--color-lighter: #f9f9f9;
 	--color-white: #fff;
 	--color-border:#e0e3e6;
+	--color-scroll-bg: #e6e6e6;
+	--color-scroll: #b6b6b6;
 }
 .dark {
 	--color-main: #00bb00;
@@ -18,23 +20,38 @@ Color Mode
 	--color-dark: #f5f6f7;
 	--color-gray: #999;
 	--color-bg: #1f2124;
+	--color-light: #313b30;
 	--color-lighter: #292a2c;
 	--color-white: #2e3235;
 	--color-border:#252629;
+	--color-scroll-bg: #444444;
+	--color-scroll: #191919;
+
 }
 /*--------------------
-Universal Styles
+2 - Universal Styles
 --------------------*/
 .App {
 	background-color: var(--color-white);
+	color: var(--color-text);
 	height: 100vh;
 	transition: all .1s ease-in-out;
 }
+.declined {
+	color: red;
+}
+.approved {
+	color:var(--color-main) ;
+}
+.pending {
+	color: #c6a23f;
+}
 /*--------------------
-Header Styles
+3 - Header Styles
 --------------------*/
 .App-header {
 	padding: 1.5rem;
+	margin-bottom: 3rem;
 	background-color: var(--color-lighter);
 	border-bottom: 2px solid var(--color-border);
 	display: flex;
@@ -43,8 +60,36 @@ Header Styles
 .App-logo {
 	width: 10rem;
 }
+.table-header {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+	.table-header h1 {
+		text-transform: uppercase;
+		font-weight: 700;
+		margin: 0;
+	}
+	.table-header .btn-main {
+		background-color: var(--color-main);
+		display: flex;
+		align-items: center;
+		height: 50%;
+		color: white;
+	}
+	.table-header .btn-main:hover {
+		background-color: #027702;
+	}
+	.btn-main i {
+		position: relative;
+		left: -5px;
+	}
+
 /*--------------------
-Toggle Switch Styles
+4 - Toggle Switch Styles
 --------------------*/
 .App-header button {
 	background-color: unset;
@@ -111,3 +156,73 @@ i.moon{
 	right: -4px;
 	color: #782889;
 }
+/*--------------------
+4 - Table Styles
+--------------------*/
+.table-container {
+	margin: 0 auto;
+	width: 90%;
+	overflow: auto;
+}
+.scrollbar-style::-webkit-scrollbar {
+	height: 0.5rem;
+	background-color: var(--color-scroll-bg);
+}
+.scrollbar-style::-webkit-scrollbar-thumb {
+	background-color: var(--color-scroll);
+	border: 1px solid var(--color-scroll-bg);
+	border-radius: 1rem;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.table li {
+	margin-bottom: 0.5rem;
+}
+.table li p {
+	margin: 0;
+}
+	.table li p.number {
+		font-size: 0.9rem;
+		font-style: italic;
+	}
+.table td.performance i {
+	position: relative;
+	top: 5px;
+} 
+.table td.status i {
+	position: relative;
+	top: 5px;
+}
+/* overwriting bootstrap */
+table.table > :not(caption) > * > * {
+	white-space: nowrap;
+	padding: 1rem;
+}
+table.table {
+	color: var(--color-text);
+	--bs-table-striped-color: var(--color-text);
+	--bs-table-striped-bg: var(--color-light); 
+	border-color: var(--color-border);
+}
+/*--------------------
+5 - Key Styles
+--------------------*/
+ul.key {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 471px;
+	display: flex;
+	justify-content: space-between;
+}
+	ul.key li {
+		display: flex;
+		align-items: center;
+		font-size: .75rem;
+	}
+	ul.key li i {
+		margin-right: .25rem;
+		font-size: 1rem;
+	}
