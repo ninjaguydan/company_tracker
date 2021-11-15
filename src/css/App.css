@@ -28,20 +28,13 @@
 	--color-scroll: #191919;
 
 }
-html {
-	height: 100%;
-}
-body, #root {
-	height: inherit;
-}
-.unset {
-	height: unset;
+body {
+	background-color: var(--color-white);
 }
 /*--------------------
 2 - Universal Styles
 --------------------*/
 .App {
-	background-color: var(--color-white);
 	color: var(--color-text);
 	height: 100%;
 	transition: all .1s ease-in-out;
