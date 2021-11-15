@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/company_tracker/static/css/main.de7eed23.chunk.css",
-    "main.js": "/company_tracker/static/js/main.d1b91d92.chunk.js",
-    "main.js.map": "/company_tracker/static/js/main.d1b91d92.chunk.js.map",
+    "main.css": "/company_tracker/static/css/main.793192d8.chunk.css",
+    "main.js": "/company_tracker/static/js/main.c91bd4cd.chunk.js",
+    "main.js.map": "/company_tracker/static/js/main.c91bd4cd.chunk.js.map",
     "runtime-main.js": "/company_tracker/static/js/runtime-main.e34e191f.js",
     "runtime-main.js.map": "/company_tracker/static/js/runtime-main.e34e191f.js.map",
     "static/css/2.383c0125.chunk.css": "/company_tracker/static/css/2.383c0125.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.217e6476.chunk.js.map": "/company_tracker/static/js/2.217e6476.chunk.js.map",
     "index.html": "/company_tracker/index.html",
     "static/css/2.383c0125.chunk.css.map": "/company_tracker/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.de7eed23.chunk.css.map": "/company_tracker/static/css/main.de7eed23.chunk.css.map",
+    "static/css/main.793192d8.chunk.css.map": "/company_tracker/static/css/main.793192d8.chunk.css.map",
     "static/js/2.217e6476.chunk.js.LICENSE.txt": "/company_tracker/static/js/2.217e6476.chunk.js.LICENSE.txt",
     "static/media/tracker_logo.c05305fe.svg": "/company_tracker/static/media/tracker_logo.c05305fe.svg"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.e34e191f.js",
     "static/css/2.383c0125.chunk.css",
     "static/js/2.217e6476.chunk.js",
-    "static/css/main.de7eed23.chunk.css",
-    "static/js/main.d1b91d92.chunk.js"
+    "static/css/main.793192d8.chunk.css",
+    "static/js/main.c91bd4cd.chunk.js"
   ]
 }
