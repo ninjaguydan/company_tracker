@@ -28,8 +28,14 @@
 	--color-scroll: #191919;
 
 }
-html, body, #root {
+html {
 	height: 100%;
+}
+body, #root {
+	height: inherit;
+}
+.unset {
+	height: unset;
 }
 /*--------------------
 2 - Universal Styles

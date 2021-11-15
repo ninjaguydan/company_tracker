@@ -13,9 +13,15 @@ function App() {
 	function colorMode(){
 		document.querySelector('.App').classList.toggle('dark')
 	}
+	//Brute forcing the background--there's probably a better way to do this
+	function fullHeight(){
+		let html = document.querySelector('html')
+		html.classList.toggle('unset')
+	}
 	//Toggle 'Add target' form
 	const [showTargetForm, setShowTargetForm] = useState(false)
 	function toggleForm(){
+		fullHeight()
 		setShowUpdateForm(false)
 		setShowTargetForm(!showTargetForm)
 	}
@@ -41,6 +47,7 @@ function App() {
 	const [showUpdateForm, setShowUpdateForm] = useState(false)
 	const [company, setCompany] = useState('')
 	function editTarget(id){
+		fullHeight()
 		setShowTargetForm(false)
 		setShowUpdateForm(!showUpdateForm)
 		let company = targetList.filter((target) => target.id === id )
