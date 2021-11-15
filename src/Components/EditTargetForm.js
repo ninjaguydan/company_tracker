@@ -1,15 +1,13 @@
 import { useState } from "react"
 
-const AddTargetForm = ({ onAdd }) => {
-
+const EditTargetForm = ({ target, onUpdate }) => {
 	// Input States
-	const [name, setNameField] = useState('')
-	const [location, setLocationField] = useState('')
-	const [contacts, setContactFields] = useState([
-		{ name: '', number: '' },
-	])
-	const [performance, setPerformanceField] = useState('0')
-	const [status, setStatusField] = useState('approved')
+	const [id, setId] = useState(target[0].id)
+	const [name, setNameField] = useState(target[0].name)
+	const [location, setLocationField] = useState(target[0].location)
+	const [contacts, setContactFields] = useState(target[0].contacts)
+	const [performance, setPerformanceField] = useState(target[0].performance)
+	const [status, setStatusField] = useState(target[0].status)
 
 	// Click functions
 	const handleChange = (index, e) => {
@@ -17,24 +15,22 @@ const AddTargetForm = ({ onAdd }) => {
 		values[index][e.target.name] = e.target.value
 		setContactFields(values)
 	}
-	//Add extra contact clot
 	const addContact = () => {
 		setContactFields([...contacts, {name: '', number: ''}])
 	}
-	
-	const handleSubmit = (e) => {
+	const handleUpdate = (e) => {
 		e.preventDefault();
 		//validation here
-		onAdd({ name, location, contacts, performance, status })
+		onUpdate({ id, name, location, contacts, performance, status })
 		setNameField('')
 		setLocationField('')
 		setContactFields([{ name: '', number: '' }])
 		setPerformanceField('0')
 		setStatusField('approved')
 	}
-	
+
 	return (
-		<form className="add-target" onSubmit={handleSubmit}>
+		<form className="add-target" onSubmit={handleUpdate}>
 			<div className="form-group">
 				<label htmlFor="name">Name</label>
 				<input type="text" id="name" className="form-control" value={name} onChange={(e) => setNameField(e.target.value)} />
@@ -69,9 +65,9 @@ const AddTargetForm = ({ onAdd }) => {
 					<option value="researching">Researching</option>
 				</select>
 			</div>
-			<button className="btn" onClick={handleSubmit}>Save Target</button>
+			<button className="btn" onClick={handleUpdate}>Update Target</button>
 		</form>
 	)
 }
 
-export default AddTargetForm
+export default EditTargetForm

@@ -1,7 +1,7 @@
-import targets from '../data'
-import { highOrLow, setStatus } from '../Helpers/Helper' 
+import { highOrLow, setStatus } from '../Helpers/Helper'
+import Button from './Button'
 
-const TargetTable = () => {
+const TargetTable = ({ targets, onDelete, onEdit }) => {
 	return (
 		<table className="table table-striped">
 			<thead>
@@ -12,6 +12,7 @@ const TargetTable = () => {
 					<th scope="col">Contacts</th>
 					<th scope="col">Performance</th>
 					<th scope="col">Status</th>
+					<th scope="col">Options</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,8 +23,8 @@ const TargetTable = () => {
 						<td>{target.location}</td>
 						<td>
 							<ul>
-							{target.contacts.map( contact => {
-								return <li>
+							{target.contacts.map( (contact, index) => {
+								return <li key={index}>
 									<p>{contact.name}</p>
 									<p className="number">{contact.number}</p>
 								</li>
@@ -32,6 +33,10 @@ const TargetTable = () => {
 						</td>
 						<td className="performance">{ highOrLow(target.performance)} {target.performance}%</td>
 						<td className="status">{ setStatus(target.status) }</td>
+						<td>
+							<Button text="Edit" classes="btn new-contact" clickEvent={() => onEdit(target.id)} />
+							<Button text="Delete" classes="btn new-contact" clickEvent={() => onDelete(target.id)}/>
+						</td>
 					</tr>		
 				} ) }
 			</tbody>

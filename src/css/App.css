@@ -28,13 +28,16 @@
 	--color-scroll: #191919;
 
 }
+html, body, #root {
+	height: 100%;
+}
 /*--------------------
 2 - Universal Styles
 --------------------*/
 .App {
 	background-color: var(--color-white);
 	color: var(--color-text);
-	/* height: 100vh; */
+	height: 100%;
 	transition: all .1s ease-in-out;
 }
 .declined {
@@ -219,8 +222,14 @@ table.table {
 	--bs-table-striped-bg: var(--color-light); 
 	border-color: var(--color-border);
 }
+table.table button.new-contact {
+	margin: 0;
+}
+table.table button.new-contact:first-child {
+	margin-right: .5rem;
+}
 /*--------------------
-5 - Key Styles
+5 - Icon Key Styles
 --------------------*/
 ul.key {
 	margin: 0 auto;
