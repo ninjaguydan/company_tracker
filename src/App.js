@@ -13,11 +13,6 @@ function App() {
 	function colorMode(){
 		document.querySelector('body').classList.toggle('dark')
 	}
-	//Brute forcing the background--there's probably a better way to do this
-	function fullHeight(){
-		let html = document.querySelector('html')
-		html.classList.toggle('unset')
-	}
 	//Toggle 'Add target' form
 	const [showTargetForm, setShowTargetForm] = useState(false)
 	function toggleForm(){
