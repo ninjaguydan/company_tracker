@@ -23,7 +23,12 @@ function App() {
 	const [targetList, setTargetList] = useState(targets)
 	//Add New Target
 	function addTarget(target){
-		const id = targetList[targetList.length - 1].id + 1
+		let id
+		if (targetList.length === 0) {
+			id = 1
+		} else {
+			id = targetList[targetList.length - 1].id + 1
+		}
 		const newTarget = { id, ...target }
 		setTargetList([...targetList, newTarget])
 		setShowTargetForm(false)
