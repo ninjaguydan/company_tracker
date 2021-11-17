@@ -12,6 +12,7 @@ function App() {
 	// light/ dark mode toggle
 	function colorMode(){
 		document.querySelector('body').classList.toggle('dark')
+		document.querySelector('span.slider').classList.toggle('active')
 	}
 	//Toggle 'Add target' form
 	const [showTargetForm, setShowTargetForm] = useState(false)

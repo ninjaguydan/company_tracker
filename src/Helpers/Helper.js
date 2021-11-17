@@ -8,12 +8,12 @@ export function highOrLow(num){
 }
 export function setStatus(str){
 	if (str === "approved") {
-		return <i className="material-icons approved">check_circle</i>
+		return <i className="material-icons approved" aria-label="status: approved">check_circle</i>
 	} else if (str === "pending") {
-		return <i className="material-icons pending">watch_later</i>
+		return <i className="material-icons pending" aria-label="status: pending">watch_later</i>
 	} else if (str === "researching") {
-		return <i className="material-icons">info</i>
+		return <i className="material-icons" aria-label="status: researching">info</i>
 	} else {
-		return <i className="material-icons declined">cancel</i>
+		return <i className="material-icons declined" aria-label="status: declined">cancel</i>
 	}
 }
