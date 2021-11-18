@@ -12,7 +12,7 @@ const AddTargetForm = ({ onAdd }) => {
 	const [status, setStatusField] = useState('approved')
 
 	//Add extra contact slot
-	const handleChange = (index, e) => {
+	const handleContact = (index, e) => {
 		const values = [...contacts];
 		values[index][e.target.name] = e.target.value
 		setContactFields(values)
@@ -26,6 +26,10 @@ const AddTargetForm = ({ onAdd }) => {
 		//validation here
 		if ( name.trim().length < 1 ) {
 			alert('Please enter a company name.')
+			return
+		}
+		if ( location.trim().length < 1 ) {
+			alert('Please enter a company location.')
 			return
 		}
 		//passing values to parent componenet
@@ -52,11 +56,11 @@ const AddTargetForm = ({ onAdd }) => {
 				return <div key={index} className="contact-group">
 					<div className="form-group">
 						<label htmlFor="name">Contact Name</label>
-						<input type="text" id="name" name="name" className="form-control" value={field.name} onChange={ e => handleChange(index, e) } />
+						<input type="text" id="name" name="name" className="form-control" value={field.name} onChange={ e => handleContact(index, e) } />
 					</div>
 					<div className="form-group">
 						<label htmlFor="number">Contact Number</label>
-						<input type="tel" id="number" name="number" className="form-control" value={field.number} onChange={ e => handleChange(index, e) }/>
+						<input type="tel" id="number" name="number" className="form-control" value={field.number} onChange={ e => handleContact(index, e) }/>
 					</div>
 				</div>
 			})}
@@ -74,7 +78,7 @@ const AddTargetForm = ({ onAdd }) => {
 					<option value="researching">Researching</option>
 				</select>
 			</div>
-			<button className="btn" onClick={handleSubmit}>Save Target</button>
+			<button className="btn" onClick={handleSubmit} disabled={ name && location ? "" : "disbaled" }>Save Target</button>
 		</form>
 	)
 }

@@ -18,12 +18,16 @@ const EditTargetForm = ({ target, onUpdate }) => {
 	const addContact = () => {
 		setContactFields([...contacts, {name: '', number: ''}])
 	}
-	
+
 	const handleUpdate = (e) => {
 		e.preventDefault();
 		//validation here
 		if ( name.trim().length < 1 ) {
 			alert('Please enter a company name.')
+			return
+		}
+		if ( location.trim().length < 1 ) {
+			alert('Please enter a company location.')
 			return
 		}
 		//passing values to parent componenet
@@ -71,7 +75,7 @@ const EditTargetForm = ({ target, onUpdate }) => {
 					<option value="researching">Researching</option>
 				</select>
 			</div>
-			<button className="btn" onClick={handleUpdate}>Update Target</button>
+			<button className="btn" onClick={handleUpdate} disabled={ name && location ? "" : "disbaled" }>Update Target</button>
 		</form>
 	)
 }
