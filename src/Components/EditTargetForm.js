@@ -9,7 +9,7 @@ const EditTargetForm = ({ target, onUpdate }) => {
 	const [performance, setPerformanceField] = useState(target[0].performance)
 	const [status, setStatusField] = useState(target[0].status)
 
-	// Click functions
+	//Add extra contact slot
 	const handleChange = (index, e) => {
 		const values = [...contacts];
 		values[index][e.target.name] = e.target.value
@@ -18,9 +18,15 @@ const EditTargetForm = ({ target, onUpdate }) => {
 	const addContact = () => {
 		setContactFields([...contacts, {name: '', number: ''}])
 	}
+	
 	const handleUpdate = (e) => {
 		e.preventDefault();
 		//validation here
+		if ( name.trim().length < 1 ) {
+			alert('Please enter a company name.')
+			return
+		}
+		//passing values to parent componenet
 		onUpdate({ id, name, location, contacts, performance, status })
 		setNameField('')
 		setLocationField('')

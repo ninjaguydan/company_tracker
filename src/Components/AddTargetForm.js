@@ -11,13 +11,12 @@ const AddTargetForm = ({ onAdd }) => {
 	const [performance, setPerformanceField] = useState('0')
 	const [status, setStatusField] = useState('approved')
 
-	// Click functions
+	//Add extra contact slot
 	const handleChange = (index, e) => {
 		const values = [...contacts];
 		values[index][e.target.name] = e.target.value
 		setContactFields(values)
 	}
-	//Add extra contact clot
 	const addContact = () => {
 		setContactFields([...contacts, {name: '', number: ''}])
 	}
@@ -25,7 +24,13 @@ const AddTargetForm = ({ onAdd }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		//validation here
+		if ( name.trim().length < 1 ) {
+			alert('Please enter a company name.')
+			return
+		}
+		//passing values to parent componenet
 		onAdd({ name, location, contacts, performance, status })
+		//reset form feilds
 		setNameField('')
 		setLocationField('')
 		setContactFields([{ name: '', number: '' }])
