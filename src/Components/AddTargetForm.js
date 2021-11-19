@@ -78,7 +78,7 @@ const AddTargetForm = ({ onAdd }) => {
 					<option value="researching">Researching</option>
 				</select>
 			</div>
-			<button className="btn" onClick={handleSubmit} disabled={ name && location ? "" : "disbaled" }>Save Target</button>
+			<button className="btn" onClick={handleSubmit} disabled={ name.trim() && location.trim() ? "" : "disbaled" }>Save Target</button>
 		</form>
 	)
 }
